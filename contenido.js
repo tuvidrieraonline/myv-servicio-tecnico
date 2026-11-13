@@ -22,7 +22,7 @@ window.MYV = {
     {
       nombre: "Cliente",
       servicio: "Aire acondicionado",
-      comentario: "¡Espectacular! Me cagué de frío jajaja. ¡Mil gracias!"
+      comentario: "Todo excelente, gracias."
     }
   ]
 };
