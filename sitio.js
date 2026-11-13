@@ -41,12 +41,14 @@ function ficha(t) {
   range.addEventListener("input",()=>pair.style.setProperty("--cut",range.value+"%"));
   label.append(range); figure.append(pair,label);
   const desc=el("div"); desc.append(el("small",null,"Ficha de servicio"),el("h3",null,t.equipo));
+  if (t.descripcion) desc.append(el("p", null, t.descripcion));
   for(const [key,title] of [["problema","Problema"],["trabajo","Qué hicimos"],["resultado","Resultado"]]){
+    if (!t[key]) continue;
     const p=el("p"); p.append(el("strong",null,title+": "),t[key]); desc.append(p);
   }
   card.append(figure,desc); return card;
 }
-const trabajos=(window.MYV?.trabajos||[]).filter(t=>t&&["equipo","antes","despues","problema","trabajo","resultado"].every(k=>t[k]?.trim()));
+const trabajos=(window.MYV?.trabajos||[]).filter(t=>t&&["equipo","antes","despues"].every(k=>t[k]?.trim()));
 if(trabajos.length)$("#trabajos-lista").replaceChildren(...trabajos.map(ficha));
 const opiniones=(window.MYV?.opiniones||[]).filter(o=>o?.comentario?.trim()&&o?.nombre?.trim());
 if(opiniones.length)$("#opiniones-lista").replaceChildren(...opiniones.map(o=>{

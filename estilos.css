@@ -9,4 +9,5 @@
 @media(max-width:720px){.x-hero{display:flex;flex-direction:column}.x-hero__bg{position:static;order:2;width:100%;height:clamp(170px,50vw,320px);object-position:center 43%}.x-hero:before{display:none}.x-hero__in{padding:38px var(--pad) 24px}.x-hero__copy{width:100%}.photo-caption{bottom:10px;z-index:1}.x-ctas{gap:8px;margin-top:20px}.x-cta{font-size:.93rem}.x-tags{margin-top:18px}.x-trust{grid-template-columns:1fr 1fr}.empty-case,.case,#faq,.x-contact{grid-template-columns:1fr}.x-about{align-items:start}.x-logotile{width:85px}#faq{gap:0}.foot{gap:12px}.photo-card__body{padding:14px}}
 @media(max-width:470px){.photo-cards,.x-form{grid-template-columns:1fr}.x-hero h1{font-size:2.85rem}.x-ctas a{flex:1 1 100%}.x-tags{display:grid;grid-template-columns:1fr 1fr}.x-trust{grid-template-columns:1fr}.photo-card img{aspect-ratio:16/9}.review-empty{align-items:start}.x-about{flex-direction:column}}
 .x-hero__bg{object-position:right center}
+.pair img{aspect-ratio:3/2}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
