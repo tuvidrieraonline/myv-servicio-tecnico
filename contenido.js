@@ -8,5 +8,21 @@ window.MYV = {
       descripcion: "Antes, el serpentín y las cañerías de cobre estaban a la vista. Después, la unidad se ve con la carcasa frontal colocada."
     }
   ],
-  opiniones: []
+  opiniones: [
+    {
+      nombre: "Cliente",
+      servicio: "Heladera",
+      comentario: "Me dijeron que sos el mejor y esta heladera es una gloria."
+    },
+    {
+      nombre: "Cliente",
+      servicio: "Aire acondicionado",
+      comentario: "Quedó bárbaro, tenía una mugre. ¡Gracias!"
+    },
+    {
+      nombre: "Cliente",
+      servicio: "Aire acondicionado",
+      comentario: "¡Espectacular! Me cagué de frío jajaja. ¡Mil gracias!"
+    }
+  ]
 };
