@@ -12,3 +12,4 @@
 .pair img{aspect-ratio:3/2}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media(max-width:720px){.x-hero .x-hero__bg{object-position:80% center}.x-hero:before{background:linear-gradient(90deg,rgba(16,35,61,.88) 0%,rgba(16,35,61,.72) 48%,rgba(16,35,61,.44) 100%),linear-gradient(0deg,rgba(7,25,47,.42),rgba(7,25,47,.14))}}
+.site-credit{flex:1 0 100%;margin:12px 0 0;padding-top:24px;border-top:1px solid var(--line);text-align:center;font-size:.9rem;color:var(--muted)}.site-credit a{color:var(--blue);font-weight:750;text-decoration:underline;text-underline-offset:4px}
