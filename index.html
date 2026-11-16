@@ -1,4 +1,4 @@
-<!doctype html><html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101f3a"><title>MYV Servicio Técnico | Equipos del hogar</title><meta name="description" content="Revisión y reparación de lavarropas, heladeras, secarropas y aires acondicionados. Consultá por tu equipo con MYV Servicio Técnico."><link rel="stylesheet" href="estilos.css?v=20261113-9"><script defer src="contenido.js?v=20261113-9"></script><script defer src="sitio.js?v=20261113-9"></script></head><body>
+<!doctype html><html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101f3a"><title>MYV Servicio Técnico | Equipos del hogar</title><meta name="description" content="Revisión y reparación de lavarropas, heladeras, secarropas y aires acondicionados. Consultá por tu equipo con MYV Servicio Técnico."><link rel="stylesheet" href="estilos.css?v=20261116-1"><script defer src="contenido.js?v=20261116-1"></script><script defer src="sitio.js?v=20261116-1"></script></head><body>
     <svg width="0" height="0" style="position:absolute" aria-hidden="true">
       <symbol id="i-fridge" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"></rect><path d="M5 10h14M9 5v2M9 13v3"></path></symbol>
       <symbol id="i-washer" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"></rect><circle cx="12" cy="13" r="5"></circle><path d="M8 5h1M12 5h4"></path></symbol>
@@ -12,6 +12,34 @@
       <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></symbol>
       <symbol id="i-wa" viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5v-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 2.8 1.1 3.4.9 4 .8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4Z"></path></symbol>
     </svg>
+
+    <dialog class="consulta-modal" id="consulta-modal" aria-labelledby="consulta-modal-title">
+      <div class="consulta-modal__inner">
+        <div class="consulta-modal__header">
+          <div>
+            <p class="head__eyebrow">Consulta rápida</p>
+            <h2 id="consulta-modal-title">¿Qué falla presenta tu equipo?</h2>
+            <p class="consulta-modal__intro">Dejanos tus datos y contanos brevemente qué le pasa. Te respondemos por WhatsApp.</p>
+          </div>
+          <button class="consulta-modal__close" type="button" aria-label="Cerrar formulario">×</button>
+        </div>
+        <form class="x-form consulta-form js-consulta-form" id="form-consulta-inicial">
+          <label>Nombre<input name="nombre" autocomplete="name" required/></label>
+          <label>Número de teléfono<input name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="Ej.: 11 1234-5678" required/></label>
+          <label>Tipo de equipo
+            <select name="equipo" required>
+              <option value="" selected disabled>Seleccioná tu equipo</option>
+              <option>Lavarropas</option><option>Heladera</option><option>Secarropas</option><option>Aire acondicionado</option><option>Otro</option>
+            </select>
+          </label>
+          <label>Descripción breve del problema<textarea name="problema" placeholder="Contanos qué le sucede al equipo" required></textarea></label>
+          <small>Al enviar, se abrirá WhatsApp con los datos de tu consulta.</small>
+          <div><button class="x-cta x-cta--red" type="submit"><svg class="x-ico" aria-hidden="true" style="fill:currentColor;stroke:none"><use href="#i-wa"></use></svg>Enviar consulta por WhatsApp ↗</button></div>
+        </form>
+        <p class="consulta-modal__dismiss-note">Podés cerrar esta ventana y seguir recorriendo la página.</p>
+      </div>
+    </dialog>
+
 
     <a class="skip" href="#inicio">Saltar al contenido</a><header class="x-header">
       <div class="x-header__in">
@@ -165,12 +193,12 @@
               <p>Contanos qué problema presenta tu equipo para poder orientarte.</p>
               <div><a class="x-cta x-cta--red" href="https://wa.me/5491153088029?text=Hola%20MYV%20Servicio%20T%C3%A9cnico%2C%20quiero%20realizar%20una%20consulta" rel="noopener" target="_blank">Enviar consulta</a></div>
             </div>
-            <form class="x-card x-form" id="form-consulta">
+            <form class="x-card x-form js-consulta-form" id="form-consulta">
               <label>Nombre<input name="nombre" autocomplete="name" required=""/></label>
               <label>Número de teléfono<input name="telefono" type="tel" autocomplete="tel" inputmode="tel" required=""/></label>
               <label>Tipo de equipo
                 <select name="equipo" required="">
-                  <option>Lavarropas</option><option>Heladera</option><option>Secarropas</option><option>Aire acondicionado</option><option>Otro</option>
+                  <option value="" selected disabled>Seleccioná tu equipo</option><option>Lavarropas</option><option>Heladera</option><option>Secarropas</option><option>Aire acondicionado</option><option>Otro</option>
                 </select>
               </label>
               <label>Descripción del problema<textarea name="problema" required=""></textarea></label>
