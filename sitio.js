@@ -15,19 +15,30 @@ document.addEventListener("keydown", e => {
 for (const card of document.querySelectorAll(".photo-card")) {
   card.querySelector(".link").href = chat("Hola MYV, quiero consultar por el servicio de " + card.querySelector("h3").textContent.toLowerCase() + ".");
 }
-$("#form-consulta").addEventListener("submit", e => {
+function procesarConsulta(e) {
   e.preventDefault();
-  const f = e.currentTarget, data = new FormData(f);
-  const campos = [["Nombre","nombre"],["Teléfono","telefono"],["Equipo","equipo"],["Problema","problema"]];
-  for (const [,key] of campos) {
-    const field = f.elements.namedItem(key);
-    if (!String(data.get(key)).trim()) {
+  const form=e.currentTarget, data=new FormData(form);
+  const campos=[["Nombre","nombre"],["Teléfono","telefono"],["Equipo","equipo"],["Problema","problema"]];
+  const valores=[];
+  for(const [label,key] of campos){
+    const field=form.elements.namedItem(key), value=String(data.get(key)||"").trim();
+    if(!value){
       field.setCustomValidity("Completá este campo."); field.reportValidity();
-      field.addEventListener("input", () => field.setCustomValidity(""), {once:true}); return;
+      field.addEventListener("input",()=>field.setCustomValidity(""),{once:true}); return;
     }
+    valores.push(label+": "+value);
   }
-  window.open(chat(["Hola MYV Servicio Técnico, quiero realizar una consulta.", ...campos.map(([n,k])=>n+": "+String(data.get(k)).trim())].join("\n")),"_blank","noopener");
-});
+  window.open(chat(["Hola MYV Servicio Técnico, quiero realizar una consulta.",...valores].join("\n")),"_blank","noopener");
+  const modal=form.closest("dialog");
+  if(modal?.open)modal.close();
+}
+document.querySelectorAll(".js-consulta-form").forEach(form=>form.addEventListener("submit",procesarConsulta));
+const modal=$("#consulta-modal");
+if(modal){
+  modal.querySelector(".consulta-modal__close").addEventListener("click",()=>modal.close());
+  modal.addEventListener("click",e=>{if(e.target===modal)modal.close();});
+  if(typeof modal.showModal==="function")modal.showModal(); else modal.setAttribute("open","");
+}
 function el(tag, clase, texto) {
   const n=document.createElement(tag); if(clase)n.className=clase; if(texto)n.textContent=texto; return n;
 }
