@@ -13,3 +13,21 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media(max-width:720px){.x-hero .x-hero__bg{object-position:80% center}.x-hero:before{background:linear-gradient(90deg,rgba(16,35,61,.88) 0%,rgba(16,35,61,.72) 48%,rgba(16,35,61,.44) 100%),linear-gradient(0deg,rgba(7,25,47,.42),rgba(7,25,47,.14))}}
 .site-credit{flex:1 0 100%;margin:12px 0 0;padding-top:24px;border-top:1px solid var(--line);text-align:center;font-size:.9rem;color:var(--muted)}.site-credit a{color:var(--blue);font-weight:750;text-decoration:underline;text-underline-offset:4px}
+
+.consulta-modal{width:min(520px,calc(100vw - 28px));max-width:520px;max-height:calc(100dvh - 28px);padding:0;border:1px solid #d5dbdc;border-radius:18px;color:var(--ink);background:var(--paper);box-shadow:0 24px 90px #04132680;overflow-y:auto}
+.consulta-modal::backdrop{background:rgba(5,15,29,.78);backdrop-filter:blur(4px)}
+.consulta-modal__inner{padding:clamp(22px,5vw,34px)}
+.consulta-modal__header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.consulta-modal__header .head__eyebrow{margin:0 0 10px}
+.consulta-modal h2{max-width:420px;font-size:clamp(1.8rem,6vw,2.35rem);line-height:1.06;letter-spacing:-.045em}
+.consulta-modal__intro{margin-top:10px;color:var(--muted)}
+.consulta-modal__close{flex:none;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:white;color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer}
+.consulta-modal__close:hover{background:#edf2f8}
+.consulta-modal .consulta-form{grid-template-columns:1fr;margin-top:20px;padding:0;border:0;background:transparent;gap:12px}
+.consulta-modal .consulta-form :is(input,textarea,select){font-weight:400}
+.consulta-modal .consulta-form textarea{min-height:88px}
+.consulta-modal .consulta-form small{color:var(--muted);font-weight:400}
+.consulta-modal .consulta-form>div{display:block}
+.consulta-modal .consulta-form .x-cta{width:100%}
+.consulta-modal__dismiss-note{margin-top:12px;color:var(--muted);font-size:.82rem;text-align:center}
+@media(max-width:470px){.consulta-modal{width:calc(100vw - 20px);max-height:calc(100dvh - 20px);border-radius:14px}.consulta-modal__inner{padding:20px}.consulta-modal .consulta-form{gap:10px}}
